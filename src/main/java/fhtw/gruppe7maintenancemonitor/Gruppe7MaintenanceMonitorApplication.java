@@ -4,7 +4,7 @@ import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 @SpringBootApplication
-public class Gruppe7MaintenanceMonitorApplication {
+public class Gruppe7MaintenanceMonitorApplication { // Test
 
     public static void main(String[] args) {
         SpringApplication.run(Gruppe7MaintenanceMonitorApplication.class, args);
