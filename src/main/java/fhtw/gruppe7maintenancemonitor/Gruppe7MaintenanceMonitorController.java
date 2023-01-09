@@ -1,12 +1,37 @@
 package fhtw.gruppe7maintenancemonitor;
 
-import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.http.MediaType;
+import org.springframework.web.bind.annotation.*;
 
+import java.io.File;
+
+@RestController
 public class Gruppe7MaintenanceMonitorController {
-    //first draft
-    @RequestMapping("/green")
-    public String green(){
-        return "Green";
+    String msg = "Everything works as expected";
+    @GetMapping(value="/api/message", produces = MediaType.TEXT_HTML_VALUE)
+    @ResponseBody
+    public String message(){
+        return "<html>  <body style=\"background-color:green;\"><header><title>Gruppe7</title></header> " +
+                "          <body>" + msg +  "</body>  </html>";
     }
 
+    @GetMapping(value="/api/message/set" , produces = MediaType.TEXT_HTML_VALUE)
+    @ResponseBody
+    public String maintenance(@RequestParam String param){
+        if((param != "") && (param != null)){
+               return "<html>  <body style=\"background-color:green;\"><header><title>Gruppe7</title></header> " +
+                    "          <body>" + param + " </body>  </html>";
+        }else{
+            String msgError = "Error while setting Maintenance";
+            return "<html>  <body style=\"background-color:red;\"><header><title>Gruppe7</title></header> " +
+                    "          <body>" + msgError +  "</body>  </html>";
+        }
+    }
+
+    @GetMapping(value = "/api/message/reset", produces = MediaType.TEXT_HTML_VALUE)
+    @ResponseBody
+    public String reset(){
+        return "<html>  <body style=\"background-color:green;\"><header><title>Gruppe7</title></header> " +
+                "          <body>" + msg +  "</body>  </html>";
+    }
 }
