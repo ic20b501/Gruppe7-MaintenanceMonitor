@@ -12,7 +12,7 @@ public class Gruppe7MaintenanceMonitorController {
     @ResponseBody
     public String message(){
         return "<html>  <body style=\"background-color:green;\"><header><title>Gruppe7</title></header> " +
-                "          <body>" + msg +  "</body>  </html>";
+                "          <body><p style=\"text-align:center\">" + msg +  "</p></body>  </html>";
     }
 
     @GetMapping(value="/api/message/set" , produces = MediaType.TEXT_HTML_VALUE)
@@ -20,11 +20,11 @@ public class Gruppe7MaintenanceMonitorController {
     public String maintenance(@RequestParam String param){
         if((param != "") && (param != null)){
                return "<html>  <body style=\"background-color:green;\"><header><title>Gruppe7</title></header> " +
-                    "          <body>" + param + " </body>  </html>";
+                    "          <body><p style=\"text-align:center\">" + param + " </p></body>  </html>";
         }else{
             String msgError = "Error while setting Maintenance";
             return "<html>  <body style=\"background-color:red;\"><header><title>Gruppe7</title></header> " +
-                    "          <body>" + msgError +  "</body>  </html>";
+                    "          <body><p style=\"text-align:center\">" + msgError +  "</p></body>  </html>";
         }
     }
 
@@ -32,6 +32,6 @@ public class Gruppe7MaintenanceMonitorController {
     @ResponseBody
     public String reset(){
         return "<html>  <body style=\"background-color:green;\"><header><title>Gruppe7</title></header> " +
-                "          <body>" + msg +  "</body>  </html>";
+                "          <body><p style=\"text-align:center\">" + msg +  "</p></body>  </html>";
     }
 }
