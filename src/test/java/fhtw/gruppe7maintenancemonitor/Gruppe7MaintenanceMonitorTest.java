@@ -3,7 +3,7 @@ import org.junit.jupiter.api.Test;
 
 import static org.junit.jupiter.api.Assertions.*;
 
-class Gruppe7MaintenanceMonitorTest {
+class Gruppe7MaintenanceMonitorTest { // Junit Tests
 
     @Test
     void defaultString() {
